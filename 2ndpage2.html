@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen and Polaroids</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #fff6f0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Helvetica, sans-serif;
+        }
+
+        header {
+            width: 100%;
+            background-color: #4a3724;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #4a3724;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .polaroid {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            perspective: 1000px;
+            cursor: pointer;
+            border: 5px solid #342312;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .polaroid:hover .image {
+            transform: rotateY(180deg);
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+        }
+        .text {
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #342312;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 10px;
+            }
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #75583f;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background-color: #543829;
+        }
+
+        #loading-screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff6f0;
+            z-index: 9999;
+        }
+
+        .loader {
+            border: 8px solid #a46a1d;
+            border-top: 8px solid #4d300c;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>STILO</h1>
+    </header>
+
+    <h1>Looking for your desired shoe?</h1>
+    <h2>Check out these great stores where you can find awesome sneakers to match your style! Dive into a world of different styles and cool designs from top brands. Enjoy the fun of shopping and pick the perfect pair that suits your taste. Happy shoe shopping!</h2> 
+
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.soleacademy.net'">
+        <div class="image">
+            <img src="1.png" alt="Image 1">
+            <div class="text">Sneak Snkrs</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://stockx.com/'">
+        <div class="image">
+            <img src="2.png" alt="Image 2">
+            <div class="text">Stock X</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://titan22.com'">
+        <div class="image">
+            <img src="3.png" alt="Image 3">
+            <div class="text">Titan22</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.copgarden.com'">
+        <div class="image">
+            <img src="4.png" alt="Image 4">
+            <div class="text">CopGarden</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://phenomenalsole.store'">
+        <div class="image">
+            <img src="5.png" alt="Image 5">
+            <div class="text">Flip Phenomenal</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.footlocker.ph'">
+        <div class="image">
+            <img src="6.png" alt="Image 6">
+            <div class="text">Foot Locker</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.goat.com'">
+        <div class="image">
+            <img src="7.png" alt="Image 7">
+            <div class="text">Goat</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.urbanathletics.com.ph'">
+        <div class="image">
+            <img src="8.png" alt="Image 8">
+            <div class="text">ShoeBastien</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://shop.shoegamemanila.com'">
+        <div class="image">
+            <img src="9.png" alt="Image 9">
+            <div class="text">ShoeGammeMNL</div>
+        </div>
+    </div>
+
+    <div class="polaroid" onclick="window.location.href='https://www.supafaya.com/home'">
+        <div class="image">
+            <img src="10.png" alt="Image 10">
+            <div class="text">Supafaya</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact us: stilodrip@gmail.com | Follow us on IG: @stilodrip</p>
+    </footer>
+
+    <center><a href="index.html" class="back-home-btn">Back Home</a></center>
+
+    <script>
+        const delay = 2000; 
+
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, delay);
+    </script>
+
+</body>
+</html>

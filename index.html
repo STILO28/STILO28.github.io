@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>STILO</title>
+        <link rel="icon" href="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/394249244_364749972619638_1250895863320627069_n.png?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeGLeYwfEE95aPHG20bkswbx8tLrQyRJ7k_y0utDJEnuTxnx7smj4TbF6C3JyKBO6cfLK6FbcSRp7_ZmtPis1So4&_nc_ohc=s6tJlZ3wF4YAX-iY6EQ&_nc_ht=scontent.fmnl4-4.fna&oh=03_AdReKW8c77IixRT1PKckyZrJU4oypyGcWFQUsbkUA2h1dg&oe=6575AADC">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: rgb(12, 58, 15);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Helvetica, sans-serif;
+			background-color:  #fff6f0;
+        }
+        
+        .logo{
+            width: 80px; 
+            height: 80px; 
+            margin-left: 10px;
+        }
+        
+        .header{
+            list-style: none;
+            box-sizing: border-box;
+            height: 100px;
+            width: 100%;
+            background: #755a3f;
+            color: #ffc552;
+        }
+        label {
+            color:  white;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 0 100px;
+            font-weight: bold;
+            
+        }
+        nav ul{
+            float:right;
+            margin-right: 20px;
+        }
+        nav ul li{
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px
+        }
+        nav ul li a{
+            color:#311d06;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        nav .active, a:hover{
+            background: #d5ae75;
+            transition: .5s;
+        } 
+        .checkbtn{
+            font-size: 30px;
+            color: #FFC836;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        #check{
+            display: none;
+        }
+        @media (max-width: 952px){
+                label.logo{
+                    font-size: 30px;
+                    padding-left: 50px;
+                }
+                nav ul li a{
+                    font-size: 16px;
+                }
+        }
+        @media (max-width: 858px){
+            .checkbtn{
+                display: block;
+            }
+            nav ul{
+                position: fixed;
+                width: 100%;
+                height: 250px;
+                background-color: rgb(223, 160, 109);
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+            nav ul li{
+                display: block;
+            }
+            nav ul li a{
+                font-size: 20px;
+            }
+            nav ul li a:hover,a.active{
+                background: none;
+                color: rgb(138, 95, 48);
+            }
+            #check:checked ~ ul{
+                left: 0;
+            }
+        }
+        .aboutme{
+            margin: 50px;
+            align-content: center;
+            text-align: center;
+            color: rgb(78, 56, 41);
+            background: transparent;
+        }
+        .aboutme h2{
+            font-size: 40px;
+            font-weight: regular;
+        }
+        .aboutme p{
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        .card-img-top {
+            width: 100%; /* Set the width to 100% to make the image fill the container */
+            height: 200%; /* Maintain the aspect ratio of the original image */
+        }
+        .card {
+            gap: 5px;
+            margin-top: 50px;
+			margin-bottom: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #3d2308;
+            transition: transform .2s;
+        }
+        .card-title {
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            font-weight: lighter; !important; /* Add !important to override other styles */
+            font-style: normal;
+            font-family: 'Trebuchet', sans-serif;
+        }
+
+        .card-text{
+            font-size: 1.5em;
+            text-align: center;
+			color: white;
+        }   
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-link {
+            text-decoration: none;
+            color: #755630;
+        }
+        .card-body ul{
+            list-style: none;
+        }
+        .footer{
+            background-color: #6d4b2f;
+            width: 100%;
+			height: 100px;
+            padding: 70px 30px 20px;
+        }
+        .socialIcon{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .socialIcon a{
+            text-decoration: none;
+            padding: 10px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 50%;
+        }
+            .socialIcon a i{
+            font-size: 2em;
+            color: white;
+            opacity: 0.9;
+        }
+        .socialIcon a:hover{
+            background-color: white;
+            transition: 0.5s;
+        }
+        .socialIcon a i:hover{
+            color: white;
+            transition: 0.5s;
+        }
+        .footerbottom{
+            background-color: #1d1308;
+            padding: 30px;
+            text-align: center;
+            color:#39280b;
+        }
+        .designer{
+            margin: 0 5px;
+            font-weight: regular;
+            letter-spacing: 1px;
+            opacity: 0.7;
+            color:White;
+        }
+        </style>
+
+		<script type="text/javascript">
+		function tops()
+			{
+				window.location="2ndpage.html";
+			}
+		</script>
+        <script type="text/javascript">
+            function account()
+                {
+                    window.location="STILOREG.html";
+                }
+            </script>
+        
+		<script type="text/javascript">
+		function home()
+			{
+				window.location="https://www.starbucks.com";
+			}
+		</script>
+		
+		<script type="text/javascript">
+		function aboutus()
+			{
+				window.location="about.html";
+			}
+		</script>
+		
+		<script type="text/javascript">
+		function deals()
+			{
+				window.location="https://starbucks.ph/promos";
+			}
+		</script>
+		
+		<script type="text/javascript">
+		function bottoms()
+			{
+				window.location="2ndpage3.html";
+			}
+		</script>
+				<script type="text/javascript">
+		function shoes()
+			{
+				window.location="2ndpage2.html";
+			}
+		</script>
+    </head>
+    <body>
+        <div class="header">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </label>
+                <div class="logo-container">
+                    <img src="logo.png" class="logo" alt="STILO Logo">
+                    <label class="brand-name">STILO</label>
+                </div>
+                <ul>
+                    <li><a class="active" href="#" id="home" type="button" value="Redirect Me" onclick="home();" >Home</a></li>
+                    <li><a href="#" id="account" type="button" value="Redirect Me" onclick="account();" >Account</a></li>
+                    <li><a href="#" id="aboutus" type="button" value="Redirect Me" onclick="aboutus();">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="aboutme" >
+<h1>Need help finding your Local Brand?</h1>
+<p>&nbsp</p>
+<h6>Welcome to STILO – Your go-to fashion hub! Combining social media, convenience, and style, STILO is more than just a store; 
+    it's a fashion community for the digital era. Discover the latest trends from influencers and celebrities, creating a visual
+    identity that goes beyond outfits. Whether you seek style guides for social media or want to stay current with fashion challenges,
+    STILO has you covered. Our user-friendly platform offers a curated assortment reflecting popular social media trends. Embrace the 
+    intersection of fashion and social media, join a community of like-minded fashion enthusiasts, and let your personal style shine across screens. 
+    Thanks for choosing STILO as your fashion companion – Where Fashion and the Digital Runway Converge!</h6>
+
+        </div>   
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" type="button" value="Redirect Me" onclick="tops();" >
+                        <img src="TSHIRT.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" color="white" >Tops</h5>
+ 
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" type="button" value="Redirect Me" onclick="bottoms();">
+                    <div class="card">
+                        <img src="pants.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" >
+                            <h5 class="card-title" color="white">Bottoms</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" type="button" value="Redirect Me" onclick="shoes();">
+                    <div class="card">
+                        <img src="shoes.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" color="white" >Shoes</h5>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+                <p>All Right Reserve @ 2023 <span class="designer">STILO</span></p>
+  
+        </div>
+    </body>
+</html>

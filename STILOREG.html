@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    form {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #2e240a;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5a4b33;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="loginForm">
+    <h2>Login</h2>
+    <label for="loginEmail">Email:</label>
+    <input type="email" id="loginEmail" required>
+    <label for="loginPassword">Password:</label>
+    <input type="password" id="loginPassword" required>
+    <button type="button" onclick="login()">Login</button>
+  </form>
+
+  <form id="registerForm" style="margin-left: 20px;">
+    <h2>Register</h2>
+    <label for="registerEmail">Email:</label>
+    <input type="email" id="registerEmail" required>
+    <label for="registerPassword">Password:</label>
+    <input type="password" id="registerPassword" required>
+    <button type="button" onclick="register()">Register</button>
+  </form>
+
+  <script>
+    function login() {
+      var email = document.getElementById('loginEmail').value;
+      var password = document.getElementById('loginPassword').value;
+
+      // You can add validation and authentication logic here
+      console.log('Login:', email, password);
+    }
+
+    function register() {
+      var email = document.getElementById('registerEmail').value;
+      var password = document.getElementById('registerPassword').value;
+
+      // You can add validation and registration logic here
+      console.log('Register:', email, password);
+    }
+  </script>
+
+</body>
+</html>
